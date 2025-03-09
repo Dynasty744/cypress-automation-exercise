@@ -24,31 +24,34 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+Cypress.Commands.add('getDataQa', (dataQaSelector) => {
+    return cy.get(`[data-qa=${dataQaSelector}]`)
+})
+
 Cypress.Commands.add('registerUser', (name, email, password) => {
     cy.contains('Signup / Login').click();
     cy.contains('New User Signup!').should('be.visible');
     // Fill user details
-    cy.get('[data-qa="signup-name"]').type(name);
-    cy.get('[data-qa="signup-email"]').type(email);
-    cy.get('[data-qa="signup-button"]').click();
+    cy.getDataQa('signup-name').type(name);
+    cy.getDataQa('signup-email').type(email);
+    cy.getDataQa('signup-button').click();
     cy.contains('Enter Account Information').should('be.visible');
-    cy.get('[data-qa="password"]').type(password);
-    cy.get('[data-qa="days"]').select('1');
-    cy.get('[data-qa="months"]').select('January');
-    cy.get('[data-qa="years"]').select('2021');
+    cy.getDataQa('password').type(password);
+    cy.getDataQa('days').select('1');
+    cy.getDataQa('months').select('January');
+    cy.getDataQa('years').select('2021');
     cy.get('[name="newsletter"]').click();
     cy.contains('Receive special offers from our partners!').click();
-
     // Fill address details
-    cy.get('[data-qa="first_name"]').type('john');
-    cy.get('[data-qa="last_name"]').type('smith');
-    cy.get('[data-qa="company"]').type('test company');
-    cy.get('[data-qa="address"]').type('123 private ave');
-    cy.get('[data-qa="address2"]').type('321 private ave');
-    cy.get('[data-qa="country"]').select('United States');
-    cy.get('[data-qa="state"]').type('BUNGA STATE');
-    cy.get('[data-qa="city"]').type('HELLO CITY');
-    cy.get('[data-qa="zipcode"]').type('1234');
-    cy.get('[data-qa="mobile_number"]').type('123-123-1234');
-    cy.get('[data-qa="create-account"]').click();
+    cy.getDataQa('first_name').type('john');
+    cy.getDataQa('last_name').type('smith');
+    cy.getDataQa('company').type('test company');
+    cy.getDataQa('address').type('123 private ave');
+    cy.getDataQa('address2').type('321 private ave');
+    cy.getDataQa('country').select('United States');
+    cy.getDataQa('state').type('BUNGA STATE');
+    cy.getDataQa('city').type('HELLO CITY');
+    cy.getDataQa('zipcode').type('1234');
+    cy.getDataQa('mobile_number').type('123-123-1234');
+    cy.getDataQa('create-account').click();
 })

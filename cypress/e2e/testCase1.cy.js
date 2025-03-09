@@ -22,6 +22,6 @@ describe('new user', () => {
     // Step 5: Delete account
     cy.contains('Delete Account').click();
     cy.contains('Account Deleted!').should('be.visible');
-    cy.get('[data-qa="continue-button"]').click();
+    cy.getDataQa('continue-button').click();
   });
 });
