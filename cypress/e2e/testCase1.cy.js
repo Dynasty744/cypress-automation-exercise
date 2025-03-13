@@ -9,7 +9,7 @@ describe('new user', () => {
     cy.title().should('eq', 'Automation Exercise');
 
     // Step 2: Register new user flow
-    cy.registerUser(USER_NAME, USER_EMAIL, USER_PASSWORD)
+    cy.registerUser(USER_NAME, USER_EMAIL, USER_PASSWORD);
 
     // Step 3: Verify 'ACCOUNT CREATED!' is visible
     cy.contains('Account Created!').should('be.visible');
