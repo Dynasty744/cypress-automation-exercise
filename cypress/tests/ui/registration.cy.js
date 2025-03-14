@@ -1,7 +1,7 @@
 describe('new user', () => {
   const USER_NAME = 'john smith';
   const USER_EMAIL = `johnsmith${Date.now()}@email.com`;
-  const USER_PASSWORD = '1234!@#$';
+  const USER_PASSWORD = Cypress.env('PASSWORD');
 
   it('registers new user and deletes user', () => {
     // Step 1: Launch browser and navigate to URL
