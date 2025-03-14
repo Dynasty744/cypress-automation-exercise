@@ -34,5 +34,5 @@ const urlsToSuppress = [
 beforeEach(() => {
     urlsToSuppress.forEach((url) => {
         cy.intercept(url, {log: false});
-    })
+    });
   });
