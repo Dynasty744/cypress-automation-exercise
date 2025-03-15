@@ -1,3 +1,5 @@
+const { validateResponse } = require('../../utils/schemaValidator')
+
 describe('GET',
   () => {
   const USER_NAME = 'john smith';
@@ -58,6 +60,7 @@ describe('GET',
       qs: queryParams
     }).then(response => {
       const responseBody = JSON.parse(response.body)
+      validateResponse(responseBody)
       expect(response.status).to.eq(200)
       expect(responseBody.user).to.have.keys(requiredProps)
       expect(responseBody.user.name).to.eq(USER_NAME)
