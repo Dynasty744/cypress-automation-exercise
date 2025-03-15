@@ -5,7 +5,7 @@ describe('new user', () => {
 
   it('registers new user and deletes user', () => {
     // Step 1: Launch browser and navigate to URL
-    cy.visit('https://www.automationexercise.com/');
+    cy.visit('/');
     cy.title().should('eq', 'Automation Exercise');
 
     // Step 2: Register new user flow
