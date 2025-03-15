@@ -1,4 +1,4 @@
-describe('get', () => {
+describe('GET', () => {
     it('should get all products and verify response', () => {
         cy.api('GET', '/api/productsList').then(response => {
             const responseBody = JSON.parse(response.body)
@@ -10,4 +10,15 @@ describe('get', () => {
             });
         })
     });
+
+    it('should get all brands and verify response', () => {
+        cy.api('GET', '/api/brandsList').then(response => {
+            const requiredProps = ['id', 'brand']
+            const responseBody = JSON.parse(response.body)
+            expect(response.status).to.eq(200)
+            responseBody.brands.forEach(brand => {
+                expect(brand).to.have.keys(requiredProps)
+            });
+        })
+    })
 });
