@@ -27,12 +27,13 @@ const urlsToSuppress = [
     '**/googleads.g.doubleclick.net/**',
     '**/tracenep.admaster.cc/**',
     '**/www.googleadservices.com/**',
-    '**/www.googleadservices.com/.well-known/**'
+    '**/www.googleadservices.com/.well-known/**',
+    '**/maps.googleapis.com/**'
   ];
 
 // Suppress logs for fetch and XHR requests
 beforeEach(() => {
     urlsToSuppress.forEach((url) => {
-        cy.intercept(url, {log: false});
+        cy.intercept(url, { log: false });
     });
   });

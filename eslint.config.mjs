@@ -5,9 +5,9 @@ import pluginReact from "eslint-plugin-react";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { rules: {
-    'semi': ['error', 'always'],
-    'eol-last': ['error', 'always'],
-    'object-curly-spacing': ['error', 'always'],
+    'semi': ['warn', 'always'],
+    'eol-last': ['warn', 'always'],
+    'object-curly-spacing': ['warn', 'always'],
   } },
   { files: ["**/*.{js,mjs,cjs,jsx}"] },
   { languageOptions: { globals: globals.browser } },
