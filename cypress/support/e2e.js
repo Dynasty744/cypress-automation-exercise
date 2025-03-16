@@ -28,7 +28,10 @@ const urlsToSuppress = [
     '**/tracenep.admaster.cc/**',
     '**/www.googleadservices.com/**',
     '**/www.googleadservices.com/.well-known/**',
-    '**/maps.googleapis.com/**'
+    '**/maps.googleapis.com/**',
+    '**/cdn.flashtalking.com/**',
+    '**/s0.2mdn.net/**',
+    '**/agen-assets.ftstatic.com/**'
   ];
 
 // Suppress logs for fetch and XHR requests
