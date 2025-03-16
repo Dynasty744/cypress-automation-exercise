@@ -24,6 +24,5 @@ describe('products page', () => {
       cy.get('.cart_quantity').should('contain', '1');
       cy.get('.cart_total_price').should('contain', 'Rs. 400');
     });
-    
   });
 });
